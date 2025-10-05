@@ -98,12 +98,14 @@ int main(){
         return 1;
     }
 
+    // Create 4 movie objects
+    vector<Movie> movies = {
+        Movie("Fast and Furious"),
+        Movie("The Snipper"),
+        Movie("Spider Man"),
+        Movie("The Mask")
+    };
     
-
-
-
-    cout << "movies review project\n";
-
+    
     return 0;
-
 }
