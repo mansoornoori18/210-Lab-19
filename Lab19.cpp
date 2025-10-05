@@ -79,12 +79,26 @@ vector<string> loadComments(const string& filename){
         return comments;
     }
 
+    // Read each line from the file
+    while (getline(infile, line)){
+        if (!line.empty())
+        comments.push_back(line);
+    }
+    return comments;
 }
 
-
-
-
+// main function
 int main(){
+    srand(static_cast<unsigned>(time(0)));  // Seed random number generator with current time
+
+    // Load review comments
+    vector<string> allComments = loadComments("reviews.txt");
+    if (allComments.size() < 12){
+        cout << "Please ensure at least 12 comments are in reviews.txt (3 per movie x 4 movies)\n";
+        return 1;
+    }
+
+    
 
 
 
