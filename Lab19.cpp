@@ -38,9 +38,28 @@ class Movie{
         ReviewNode* newNode = new ReviewNode{ rating, comment, head };
         head = newNode;
     }
-
+    
+    // Prints all reviews and calculates the average rating
     void printReviews() const {
+        if (!head){
+            cout << title << ": No reviews available.\n";
+            return;
+        }
+        cout << "\nMovie: " << title << endl;
+        ReviewNode* current = head;
+        int count = 0;
+        double total = 0.0;
+
+        // Go through each review and display it
+        while (current){
+            count++;
+            cout << "  Review #" << count << ": " << fixed << setprecision(1) << 
+            current->rating << " - " << current->comment << endl;
+            total += current->rating;
+            current = current->next;
+        }
         
+
     }
 
 
