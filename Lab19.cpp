@@ -105,7 +105,23 @@ int main(){
         Movie("Spider Man"),
         Movie("The Mask")
     };
+
+    int commentIndex = 0;
+    // Add 3 reviews per movie
+    for (auto& movie : movies) {
+        for (int i = 0; i < 3; ++i){
+            double rating = getRandomRating();
+            string comment = allComments[commentIndex++];
+            movie.addReview(rating, comment);
+        }
+    }
+
+    // Print all reviews and average ratings
+    for (const auto& movie : movies){
+        movie.printReviews();
+    }
     
     
     return 0;
+
 }
