@@ -58,13 +58,17 @@ class Movie{
             total += current->rating;
             current = current->next;
         }
-        
-
+        // Display average rating
+        cout << "  > Average Rating: " << fixed << setprecision(2) << (total / count) << "\n";
     }
-
-
-
 };
+// Generate a random rating between 1.0 and 5.0
+double getRandomRating(){
+    int randInt = rand() % 41 + 10;  
+    return randInt / 10.0;
+}
+
+
 
 int main(){
 
