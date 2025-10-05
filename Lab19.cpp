@@ -4,6 +4,7 @@
 #include<iomanip>   // for formatting output setprecision
 #include<string>    // for using the strings 
 #include<ctime>     // for generating random number using time
+#include <cstdlib>
 
 
 using namespace std;
@@ -64,9 +65,22 @@ class Movie{
 };
 // Generate a random rating between 1.0 and 5.0
 double getRandomRating(){
-    int randInt = rand() % 41 + 10;  
-    return randInt / 10.0;
+    int randInt = rand() % 41 + 10;  // Random int between 10 and 50
+    return randInt / 10.0;           // converts it to 1.0 – 5.0
 }
+// Read comments from a text file
+vector<string> loadComments(const string& filename){
+    ifstream infile(filename);      // Open the file
+    vector<string> comments;        // Vector to store comments
+    string line;
+
+    if (!infile){
+        cout << "Error: Could not open file " << filename << endl;
+        return comments;
+    }
+
+}
+
 
 
 
