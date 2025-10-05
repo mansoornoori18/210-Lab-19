@@ -13,6 +13,26 @@ class Movie{
     private:
     string title;
 
+    // Each review is stored as a node in a linked list
+    struct ReviewNode{
+        double rating;
+        string comment;
+        ReviewNode* next;   // Pointer to the next review in the list
+    };
+
+    public:
+    // Constructor: sets the movie title and initializes head to nullptr
+    Movie(const string& title) : title(title), head(nullptr){}
+
+    ~Movie(){
+        while (head != nullptr){
+            ReviewNode* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+
+
 };
 
 int main(){
